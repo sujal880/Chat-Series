@@ -1,4 +1,5 @@
 import 'package:chatappui/domain/constants/appcolors.dart';
+import 'package:chatappui/repository/screens/bottomnav/bottomnavigationscreen.dart';
 import 'package:chatappui/repository/screens/widgets/uihelper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,18 +40,25 @@ class ProfileScreen extends StatelessWidget {
                 controller: firstnameController,
                 text: "First Name (Required)",
                 textinputtype: TextInputType.name,
-                context: context),
-            SizedBox(height: 10,),
+                context: context,icondata: Icons.person),
+            SizedBox(
+              height: 10,
+            ),
             UiHelper.CustomTextField(
                 controller: lastnameController,
                 text: "Last Name (Required)",
                 textinputtype: TextInputType.name,
-                context: context)
+                context: context,icondata: CupertinoIcons.person_2)
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: UiHelper.CustomButton(buttonnname: "Save", callback: (){}),
+      floatingActionButton: UiHelper.CustomButton(
+          buttonnname: "Save",
+          callback: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => BottomNavScreen()));
+          }),
     );
   }
 }

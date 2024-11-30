@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                 controller: phoneController,
                 text: "Phone Number",
                 textinputtype: TextInputType.number,
-                context: context)
+                context: context,icondata: Icons.phone)
           ],
         ),
       ),
